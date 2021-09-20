@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Box from '@mui/material/Box';
 
-function App() {
+import Home from './components/home';
+import Projects from "./components/projects";
+
+
+
+export default function App() {
+
+  const [value, setValue] = React.useState('one');
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <div>
+          <Box>
+            <Tabs
+                value={value}
+                onChange={handleChange}
+            >
+              <Tab value="one" label="Item One" />
+              <Tab value="two" label="Item Two" />
+            </Tabs>
+          </Box>
+
+          <Switch>
+            <Route path={"/"} exact component={Home}/>
+            <Route path={"/projects"} component={Projects}/>
+          </Switch>
+        </div>
+      </Router>
   );
 }
-
-export default App;
