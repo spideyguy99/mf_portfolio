@@ -1,9 +1,12 @@
 import React from "react";
+import Paper from '@mui/material/Paper'
 
 export default function Projects(){
     return(
     <div>
-        Projects
+        <Paper>
+            Projects
+        </Paper>
     </div>
     )
 }
