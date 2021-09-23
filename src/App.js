@@ -28,33 +28,34 @@ export default function App() {
   const allTabs = ['/', '/projects'];
 
     const Root = styled('div')(({ theme }) => ({
-        padding: theme.spacing(1),
+
         [theme.breakpoints.down('md')]: {
-            backgroundColor: theme.palette.secondary.main,
-        },
-        [theme.breakpoints.up('md')]: {
-            backgroundColor: theme.palette.primary.main,
+            ".tab":{
+                width:"50%"
+            }
         },
     }));
 
   return (
       <Router>
         <div className="App">
-          <Route
-              path="/"
-              render={({ location }) => (
-                <Fragment>
-                    <Tabs value={location.pathname}>
-                      <Tab label="About Me" value="/" component={Link} to={allTabs[0]} />
-                      <Tab label="Projects" value="/projects" component={Link} to={allTabs[1]} />
-                    </Tabs>
-                        <Switch>
-                            <Route path={allTabs[1]} render={() => <Projects/>} />
-                            <Route path={allTabs[0]} render={() => <Home/>} />
-                        </Switch>
-                </Fragment>
-              )}
-          />
+            <Root>
+              <Route
+                  path="/"
+                  render={({ location }) => (
+                    <Fragment>
+                        <Tabs value={location.pathname}>
+                          <Tab label="About Me" value="/" component={Link} to={allTabs[0]} className={"tab"} />
+                          <Tab label="Projects" value="/projects" component={Link} to={allTabs[1]} className={"tab"}/>
+                        </Tabs>
+                            <Switch>
+                                <Route path={allTabs[1]} render={() => <Projects/>} />
+                                <Route path={allTabs[0]} render={() => <Home/>} />
+                            </Switch>
+                    </Fragment>
+                  )}
+              />
+            </Root>
         </div>
       </Router>
   );
