@@ -2,10 +2,8 @@ import React from "react";
 
 import Paper from '@mui/material/Paper';
 import {Container} from "@mui/material";
-import {Avatar} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
-import Profile from '../media/profile.jpeg';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -23,6 +21,20 @@ const Root = styled('div')(({ theme }) => ({
     },
     "#edu":{
       textAlign:"center"
+    },
+    "#skill":{
+    width:"auto",
+    display:"block"
+    },
+    ".icons":{
+      color:"black"
+    },
+    "#activity":{
+        display:"block",
+        textAlign:"center"
+    },
+    "#activityHolder":{
+        marginBottom:theme.spacing(5)
     },
     [theme.breakpoints.down('md')]: {
     ".icons":{
@@ -43,6 +55,10 @@ const Root = styled('div')(({ theme }) => ({
         },
         ".headername":{
             lineHeight: 1
+        },
+        "#skill":{
+            width:"auto",
+            display:"block"
         }
     },
     [theme.breakpoints.up('md')]: {
@@ -61,6 +77,10 @@ const Root = styled('div')(({ theme }) => ({
         ".holder":{
             padding: theme.spacing(2),
             marginTop:25
+        },
+        "#skill":{
+            width:"auto",
+            display:"block"
         }
     },
     [theme.breakpoints.up('lg')]: {
@@ -79,6 +99,15 @@ const Root = styled('div')(({ theme }) => ({
         },
         ".divinpaper":{
             width:"50%"
+        },
+        "#skill":{
+            display:"block",
+            width:"45%"
+        },
+        "#skillholder":{
+            display:"flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around"
         }
     },
 }));
@@ -88,18 +117,25 @@ export default function Home(){
         <Container>
             <Paper
                 elevation={4}
-                sx={{textAlign:"center"}}
+                sx={{textAlign:"center", marginTop:10}}
             >
                 <h1>Hey, I'm Noah :)</h1>
-                <p>I make fun websites and work on computers!</p>
+                <p  style={{paddingBottom:5}}>I make fun websites and work on computers!</p>
             </Paper>
             <Root>
                 <Paper elevation={4} className={"paper"}>
-                    <Avatar alt={"Noah Furniss"} src={Profile} className={"icons"}/>
-                    <GitHubIcon className={"icons"}/>
-                    <LinkedInIcon className={"icons"}/>
-                    <FacebookIcon className={"icons"}/>
-                    <InstagramIcon className={"icons"}/>
+                    <a href={"https://github.com/spideyguy99"}>
+                        <GitHubIcon className={"icons"}/>
+                    </a>
+                    <a href={"https://www.linkedin.com/in/noah-furniss-61a682163/"}>
+                        <LinkedInIcon className={"icons"}/>
+                    </a>
+                    <a href={"https://www.facebook.com/noah.furniss.73"}>
+                        <FacebookIcon className={"icons"}/>
+                    </a>
+                    <a href={"https://www.instagram.com/https.noah99/"}>
+                        <InstagramIcon className={"icons"}/>
+                    </a>
                     {/*Links to socials and Github */}
                 </Paper>
                 <Paper className={"holder"} elevation={4}>
@@ -116,7 +152,7 @@ export default function Home(){
                         <div style={{width: "100%"}}>
                             <h3 className={"headername"}>Indiana University Kokomo</h3>
                             <h4>Indiana University School of Sciences</h4>
-                            <p>Bachelor of Science New Media</p>
+                            <p>School of Science New Media</p>
                         </div>
                     </Paper>
                     <Paper className={"paperinpaper"} id={"edu"} elevation={6}>
@@ -183,8 +219,82 @@ export default function Home(){
                         </div>
                     </Paper>
                 </Paper>
-                <Paper className={"holder"} elevation={4}>
-                    <h2>Skills</h2>
+                <Paper className={"holder"} id={"skillholder"} elevation={4}>
+                    <h2 style={{width:"100%"}}>Skills</h2>
+                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
+                        <h4 className={"skillheader"}>Programming Languages</h4>
+                        <ul>
+                            <li>JavaScript</li>
+                            <ul>
+                                <li>Vue</li>
+                                <li>JQuery</li>
+                            </ul>
+                            <li>React JS</li>
+                            <ul>
+                                <li>Material UI</li>
+                                <li>Redux</li>
+                                <li>Firebase</li>
+                            </ul>
+                            <li>React Native</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Java</li>
+                            <li>C++</li>
+                            <li>Visual Basic</li>
+                        </ul>
+                    </Paper>
+                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
+                        <h4>Software</h4>
+                        <ul>
+                            <li>Microsoft Office Suite</li>
+                            <ul>
+                                <li>Word</li>
+                                <li>Powerpoint</li>
+                                <li>Excel</li>
+                            </ul>
+                            <li>Adobe Suite</li>
+                            <ul>
+                                <li>Illustrator</li>
+                                <li>Photoshop</li>
+                                <li>Premiere</li>
+                            </ul>
+                            <li>GitHub</li>
+                            <li>Netlify</li>
+                            <li>Google Firebase</li>
+                        </ul>
+                    </Paper>
+                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
+                        <h4>Operating Systems</h4>
+                        <ul>
+                            <li>Windows 10</li>
+                            <li>MacOS</li>
+                            <li>Linux (Ubuntu)</li>
+                        </ul>
+                    </Paper>
+                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
+                        <h4>IDE's</h4>
+                        <ul>
+                            <li>WebStorm</li>
+                            <li>Codepen</li>
+                            <li>Brackets</li>
+                            <li>Visual Studio Code</li>
+                        </ul>
+                    </Paper>
+                </Paper>
+                <Paper className={"holder"} elevation={4} id={"activityHolder"}>
+                    <h2>Activities</h2>
+                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
+                        <h4>Ultimate Frisbee</h4>
+                        <p>Club Vice President</p>
+                    </Paper>
+                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
+                        <h4>Marching Band</h4>
+                        <p>Percussion: Bass Line & Quads</p>
+                    </Paper>
+                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
+                        <h4>Paintball</h4>
+                        <p>Just a fun hobby I enjoy... maybe a little too much</p>
+                    </Paper>
                 </Paper>
             </Root>
         </Container>
