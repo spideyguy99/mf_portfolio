@@ -1,4 +1,3 @@
-import React from "react";
 import CSSFinal from '../media/cssFinalApp.jpg';
 import AnimationApp from '../media/annimationApp.jpg';
 import BootstrapDemo from '../media/bootstrapDemoApp.jpg';

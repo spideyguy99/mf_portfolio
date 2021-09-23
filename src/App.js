@@ -8,20 +8,10 @@ import {
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { experimentalStyled as styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 
 
 import Home from './components/home';
 import Projects from "./components/projects";
-
-const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
 
 export default function App() {
 

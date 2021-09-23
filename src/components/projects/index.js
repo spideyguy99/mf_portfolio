@@ -1,7 +1,7 @@
 import React from "react";
 
 import Paper from '@mui/material/Paper'
-import {Container, Card, CardContent, Typography, CardMedia, CardActions, CardActionArea} from "@mui/material";
+import {Container, Card, CardContent, Typography, CardMedia, CardActionArea} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 import projects from '../data';
