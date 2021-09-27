@@ -12,8 +12,7 @@ import { experimentalStyled as styled, createTheme, ThemeProvider } from '@mui/m
 
 import Home from './components/home';
 import Projects from "./components/projects";
-import {Avatar, AppBar} from "@mui/material";
-import Profile from "./components/media/profile.jpeg";
+import {AppBar} from "@mui/material";
 // import GitHubIcon from "@mui/icons-material/GitHub";
 // import LinkedInIcon from "@mui/icons-material/LinkedIn";
 // import FacebookIcon from "@mui/icons-material/Facebook";
@@ -33,7 +32,9 @@ export default function App() {
         a:{
             color:"white"
         },
+        Avatar:{
 
+        },
         [theme.breakpoints.down('md')]: {
             ".tab":{
                 width:"50%"
@@ -57,7 +58,7 @@ export default function App() {
                                 <Tabs value={location.pathname} textColor={"primary"}>
                                     <Tab label="About Me" value="/" component={Link} to={allTabs[0]} className={"tab"} />
                                     <Tab label="Projects" value="/projects" component={Link} to={allTabs[1]} className={"tab"}/>
-                                    <Avatar alt={"Noah Furniss"} src={Profile} style={{height:"100%"}}/>
+
                                 </Tabs>
                             </AppBar>
                         </ThemeProvider>

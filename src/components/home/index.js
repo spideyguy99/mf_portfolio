@@ -1,7 +1,6 @@
 import React from "react";
 
-import Paper from '@mui/material/Paper';
-import {Container} from "@mui/material";
+import {Container, Avatar, Paper} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -9,7 +8,14 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
+import Paintball from '../media/paintball.JPG';
+import Quadline from '../media/quadLine.JPG';
+import Ultteam from '../media/ultTeam.JPG';
+import Longboard from '../media/longboard.jpg';
+import Profile from '../media/profile.jpeg';
+
 const Root = styled('div')(({ theme }) => ({
+//Global
     ".paper":{
         display:"flex",
         flexWrap:"wrap",
@@ -29,25 +35,36 @@ const Root = styled('div')(({ theme }) => ({
     ".icons":{
       color:"black"
     },
-    "#activity":{
-        display:"block",
-        textAlign:"center"
-    },
     "#activityHolder":{
         marginBottom:theme.spacing(5)
     },
+    ".activityImg":{
+        borderRadius:4 ,
+        width:"100%",
+    },
+    ".header": {
+        display: "flex",
+        justifyContent: "center",
+        marginTop:theme.spacing(10),
+        marginBottom:theme.spacing(3)
+    },
+//Phones and small tablets
     [theme.breakpoints.down('md')]: {
-    ".icons":{
-        height: 50,
-        width:50
-    },
-    "#divdesc":{
-        display:"none"
-    },
-    ".holder":{
-        padding: theme.spacing(2),
-        marginTop:25
-    },
+        ".activityImg":{
+            width:"100%",
+           aspectRatio:"16:9"
+        },
+        ".icons":{
+            height: 50,
+            width:50
+        },
+        "#divdesc":{
+            display:"none"
+        },
+        ".holder":{
+            padding: theme.spacing(2),
+            marginTop:25
+        },
         ".paperinpaper":{
             padding:theme.spacing(1),
             marginBottom:theme.spacing(1),
@@ -59,8 +76,18 @@ const Root = styled('div')(({ theme }) => ({
         "#skill":{
             width:"auto",
             display:"block"
+        },
+        "#activity":{
+           display:"block"
+        },
+        ".avatar":{
+            display:"none"
+        },
+        div:{
+            padding:theme.spacing(1)
         }
-    },
+        },
+//Tablets
     [theme.breakpoints.up('md')]: {
         ".icons":{
             height:100,
@@ -79,10 +106,34 @@ const Root = styled('div')(({ theme }) => ({
             marginTop:25
         },
         "#skill":{
-            width:"auto",
+            width:"40%",
             display:"block"
+        },
+        "#activity":{
+            display:"flex",
+            flexWrap:"wrap",
+            width:"40%"
+        },
+        ".activityHeader":{
+            width:"100%"
+        },
+        "#activityHolder":{
+            display:"flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around"
+        },
+        "#skillholder":{
+            display:"flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around"
+        },
+        ".avatar":{
+            width:100,
+            height:100,
+            margin:theme.spacing(1),
         }
     },
+//Desktops
     [theme.breakpoints.up('lg')]: {
         ".icons":{
             height:150,
@@ -108,6 +159,21 @@ const Root = styled('div')(({ theme }) => ({
             display:"flex",
             flexWrap: "wrap",
             justifyContent: "space-around"
+        },
+        "#activityHolder":{
+            display:"flex",
+            flexWrap: "wrap",
+            justifyContent: "space-around"
+        },
+        "#activity":{
+            display:"block",
+            textAlign:"center",
+            width:"45%"
+        },
+        ".avatar":{
+            width:150,
+            height:"auto",
+            margin:theme.spacing(3),
         }
     },
 }));
@@ -115,14 +181,16 @@ const Root = styled('div')(({ theme }) => ({
 export default function Home(){
     return(
         <Container>
-            <Paper
-                elevation={4}
-                sx={{textAlign:"center", marginTop:10}}
-            >
-                <h1>Hey, I'm Noah :)</h1>
-                <p  style={{paddingBottom:5}}>I make fun websites and work on computers!</p>
-            </Paper>
             <Root>
+                <Paper elevation={4} className={"header"}>
+                    <Avatar className={"avatar"} src={Profile} alt={"Profile picture of Noah Furniss"}/>
+                    <div>
+                        <h1>Hey, I'm Noah :)</h1>
+                        <p  style={{paddingBottom:5}}>I make fun websites and work on computers!</p>
+                    </div>
+
+                </Paper>
+
                 <Paper elevation={4} className={"paper"}>
                     <a href={"https://github.com/spideyguy99"}>
                         <GitHubIcon className={"icons"}/>
@@ -138,6 +206,7 @@ export default function Home(){
                     </a>
                     {/*Links to socials and Github */}
                 </Paper>
+
                 <Paper className={"holder"} elevation={4}>
                     <h2>Education</h2>
                     <Paper className={"paperinpaper"} id={"edu"} elevation={6}>
@@ -162,6 +231,8 @@ export default function Home(){
                         </div>
                     </Paper>
                 </Paper>
+
+
                 <Paper className={"holder"} elevation={4}>
                     <h2>Work Experience</h2>
 
@@ -219,6 +290,8 @@ export default function Home(){
                         </div>
                     </Paper>
                 </Paper>
+
+
                 <Paper className={"holder"} id={"skillholder"} elevation={4}>
                     <h2 style={{width:"100%"}}>Skills</h2>
                     <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
@@ -232,12 +305,17 @@ export default function Home(){
                             <li>React JS</li>
                             <ul>
                                 <li>Material UI</li>
+                                <li>Bootstrap</li>
                                 <li>Redux</li>
                                 <li>Firebase</li>
                             </ul>
                             <li>React Native</li>
                             <li>HTML</li>
                             <li>CSS</li>
+                            <ul>
+                                <li>SASS</li>
+                                <li>Less</li>
+                            </ul>
                             <li>Java</li>
                             <li>C++</li>
                             <li>Visual Basic</li>
@@ -259,15 +337,18 @@ export default function Home(){
                                 <li>Premiere</li>
                             </ul>
                             <li>GitHub</li>
-                            <li>Netlify</li>
+                            <li>Git</li>
+                            <li>Google Cloud Platform</li>
                             <li>Google Firebase</li>
+                            <li>Netlify</li>
+                            <li>Node</li>
                         </ul>
                     </Paper>
                     <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
                         <h4>Operating Systems</h4>
                         <ul>
-                            <li>Windows 10</li>
-                            <li>MacOS</li>
+                            <li>Microsoft Windows</li>
+                            <li>Apple MacOS and iOS</li>
                             <li>Linux (Ubuntu)</li>
                         </ul>
                     </Paper>
@@ -281,18 +362,28 @@ export default function Home(){
                         </ul>
                     </Paper>
                 </Paper>
+
+
                 <Paper className={"holder"} elevation={4} id={"activityHolder"}>
-                    <h2>Activities</h2>
+                    <h2 style={{width:"100%"}}>Activities</h2>
                     <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                        <h4>Ultimate Frisbee</h4>
+                        <img src={Ultteam} className={"activityImg"} alt={"IUPUI's ultimate frisbee team."}/>
+                        <h4 className={"activityHeader"}>Ultimate Frisbee</h4>
                         <p>Club Vice President</p>
                     </Paper>
                     <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                        <h4>Marching Band</h4>
+                        <img src={Longboard} className={"activityImg"} alt={"My longboard"}/>
+                        <h4 className={"activityHeader"}>Longboarding</h4>
+                        <p>One of the only things that actually keeps me active</p>
+                    </Paper>
+                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
+                        <img src={Quadline} className={"activityImg"} alt={"Me and my senior year quad line."}/>
+                        <h4 className={"activityHeader"}>Marching Band</h4>
                         <p>Percussion: Bass Line & Quads</p>
                     </Paper>
                     <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                        <h4>Paintball</h4>
+                        <img src={Paintball} className={"activityImg"} alt={"My friends and I playing paintball."}/>
+                        <h4 className={"activityHeader"}>Paintball</h4>
                         <p>Just a fun hobby I enjoy... maybe a little too much</p>
                     </Paper>
                 </Paper>

@@ -10,10 +10,7 @@ const Root = styled('div')(({ theme }) => ({
     padding: theme.spacing(1),
     ".card":{
         margin:theme.spacing(2),
-        width:"45%"
-    },
-    ".cardimg":{
-        overflow:"hidden",
+        width:"45%",
     },
     ".paper":{
         padding:theme.spacing(1),
@@ -21,11 +18,12 @@ const Root = styled('div')(({ theme }) => ({
         flexWrap:"wrap",
         justifyContent:"space-between",
     },
+//Phones and small tablets
     [theme.breakpoints.down('md')]: {
         height: 200,
         margin: theme.spacing(1),
         ".cardimg":{
-            height:200
+            height:100
         },
         ".card":{
             width:"100%"
@@ -34,6 +32,7 @@ const Root = styled('div')(({ theme }) => ({
             display: "none"
         }
     },
+//Tablets
     [theme.breakpoints.up('md')]: {
         height: 400,
         margin: theme.spacing(3),
@@ -44,9 +43,10 @@ const Root = styled('div')(({ theme }) => ({
             width:"100%"
         }
     },
+//Desktop
     [theme.breakpoints.up('lg')]: {
         ".cardimg":{
-            minHeight:500
+            height:250
         },
         ".card":{
             width:"47%"
@@ -75,7 +75,7 @@ export default function Projects(){
                 <Paper elevation={4} className={"paper"}>
                     {projects.map(item => (
                         <ThemeProvider theme={darkTheme}>
-                            <Card className={"card"} elevation={2}>
+                            <Card className={"card"} elevation={5}>
                                 <CardActionArea href={item.url}>
                                     <CardMedia
                                         image={item.img}
