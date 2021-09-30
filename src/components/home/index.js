@@ -415,7 +415,7 @@ export default function Home(){
                 <Paper className={"holder"} elevation={4} id={"activityHolder"}>
                     <h2 style={{width:"100%"}}>Activities</h2>
 
-                    <div className={"sectionHolder"}>
+                    <div className={"sectionHolder"} id={"activityHolder"}>
                     <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
                         <img src={Ultteam} className={"activityImg"} alt={"IUPUI's ultimate frisbee team."}/>
                         <h4 className={"activityHeader"}>Ultimate Frisbee</h4>
