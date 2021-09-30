@@ -14,13 +14,19 @@ import Ultteam from '../media/ultTeam.JPG';
 import Longboard from '../media/longboard.jpg';
 import Profile from '../media/profile.jpeg';
 
+import EduAccord from "./accordians/education";
+import WorkAccord from "./accordians/workExperience";
+import SkillsAccord from "./accordians/skills";
+import ActivAccord from "./accordians/activities";
+
 const Root = styled('div')(({ theme }) => ({
 //Global
+    ".background":{backgroundColor:'#90caf9', width:"100%", paddingTop:theme.spacing(10), paddingBottom:theme.spacing(5)},
     ".paper":{
         display:"flex",
         flexWrap:"wrap",
         justifyContent: "space-around",
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
     },
     ".headername":{
         lineHeight:0
@@ -45,14 +51,18 @@ const Root = styled('div')(({ theme }) => ({
     ".header": {
         display: "flex",
         justifyContent: "center",
-        marginTop:theme.spacing(10),
         marginBottom:theme.spacing(3)
     },
 //Phones and small tablets
     [theme.breakpoints.down('md')]: {
+        ".sectionHolder":{
+            display:"none"
+        },
+        ".accordion":{
+            display:"inline"
+        },
         ".activityImg":{
-            width:"100%",
-           aspectRatio:"16:9"
+            width:"100%"
         },
         ".icons":{
             height: 50,
@@ -83,12 +93,18 @@ const Root = styled('div')(({ theme }) => ({
         ".avatar":{
             display:"none"
         },
-        div:{
-            padding:theme.spacing(1)
+        ".headerDiv":{
+            paddingBottom:theme.spacing(1)
         }
         },
 //Tablets
     [theme.breakpoints.up('md')]: {
+        ".sectionHolder":{
+            display:"none"
+        },
+        ".accordion":{
+            display:"inline"
+        },
         ".icons":{
             height:100,
             width:100
@@ -135,6 +151,13 @@ const Root = styled('div')(({ theme }) => ({
     },
 //Desktops
     [theme.breakpoints.up('lg')]: {
+        ".accordion":{
+            display:"none"
+        },
+        ".sectionHolder":{
+            display:"inline"
+        },
+        ".background":{width:"100%"},
         ".icons":{
             height:150,
             width:150
@@ -180,11 +203,12 @@ const Root = styled('div')(({ theme }) => ({
 
 export default function Home(){
     return(
-        <Container>
-            <Root>
+        <Root>
+            <div className={"background"}>
+                <Container>
                 <Paper elevation={4} className={"header"}>
                     <Avatar className={"avatar"} src={Profile} alt={"Profile picture of Noah Furniss"}/>
-                    <div>
+                    <div className={"headerDiv"}>
                         <h1>Hey, I'm Noah :)</h1>
                         <p  style={{paddingBottom:5}}>I make fun websites and work on computers!</p>
                     </div>
@@ -209,6 +233,8 @@ export default function Home(){
 
                 <Paper className={"holder"} elevation={4}>
                     <h2>Education</h2>
+
+                    <div className={"sectionHolder"}>{/*ONLY DISPLAYS ON DESKTOP*/}
                     <Paper className={"paperinpaper"} id={"edu"} elevation={6}>
                         <div style={{width: "100%"}}>
                             <h3 className={"headername"}>Indiana University Purdue University Indianapolis - IUPUI</h3>
@@ -230,12 +256,18 @@ export default function Home(){
                             <p>Core 40</p>
                         </div>
                     </Paper>
+                    </div>
+
+                    <div className={"accordion"}>{/*ONLY DISPLAYS ON TABLETS AND PHONES*/}
+                        <EduAccord/>
+                    </div>
                 </Paper>
 
 
                 <Paper className={"holder"} elevation={4}>
                     <h2>Work Experience</h2>
 
+                    <div className={"sectionHolder"}>{/*ONLY DISPLAYS ON DESKTOP*/}
                     <Paper className={"paperinpaper"} elevation={6}>
                         <div className={"divinpaper"}>
                             <h4 className={"headername"}>IUPUI: School of Engineering and Technology</h4>
@@ -289,11 +321,18 @@ export default function Home(){
                             </ul>
                         </div>
                     </Paper>
+                    </div>
+
+                    <div className={"accordion"}>{/*ONLY DISPLAYS ON TABLETS AND PHONES*/}
+                        <WorkAccord/>
+                    </div>
                 </Paper>
 
 
-                <Paper className={"holder"} id={"skillholder"} elevation={4}>
+                <Paper className={"holder"}  elevation={4}>
                     <h2 style={{width:"100%"}}>Skills</h2>
+
+                    <div className={"sectionHolder"} id={"skillholder"}>{/*ONLY DISPLAYS ON DESKTOP*/}
                     <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
                         <h4 className={"skillheader"}>Programming Languages</h4>
                         <ul>
@@ -349,7 +388,11 @@ export default function Home(){
                         <ul>
                             <li>Microsoft Windows</li>
                             <li>Apple MacOS and iOS</li>
-                            <li>Linux (Ubuntu)</li>
+                            <li>Linux</li>
+                            <ul>
+                                <li>Ubuntu</li>
+                                <li>Kali</li>
+                            </ul>
                         </ul>
                     </Paper>
                     <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
@@ -361,11 +404,18 @@ export default function Home(){
                             <li>Visual Studio Code</li>
                         </ul>
                     </Paper>
+                    </div>
+
+                    <div className={"accordion"}>{/*ONLY DISPLAYS ON TABLETS AND PHONES*/}
+                        <SkillsAccord/>
+                    </div>
                 </Paper>
 
 
                 <Paper className={"holder"} elevation={4} id={"activityHolder"}>
                     <h2 style={{width:"100%"}}>Activities</h2>
+
+                    <div className={"sectionHolder"}>
                     <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
                         <img src={Ultteam} className={"activityImg"} alt={"IUPUI's ultimate frisbee team."}/>
                         <h4 className={"activityHeader"}>Ultimate Frisbee</h4>
@@ -386,8 +436,14 @@ export default function Home(){
                         <h4 className={"activityHeader"}>Paintball</h4>
                         <p>Just a fun hobby I enjoy... maybe a little too much</p>
                     </Paper>
+                    </div>
+
+                    <div className={"accordion"}>
+                        <ActivAccord/>
+                    </div>
                 </Paper>
-            </Root>
-        </Container>
+                </Container>
+            </div>
+        </Root>
     )
 }

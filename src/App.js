@@ -32,9 +32,7 @@ export default function App() {
         a:{
             color:"white"
         },
-        Avatar:{
 
-        },
         [theme.breakpoints.down('md')]: {
             ".tab":{
                 width:"50%"
@@ -47,18 +45,16 @@ export default function App() {
 
   return (
       <Router>
-        <div className="App">
             <Root>
               <Route
                   path="/"
                   render={({ location }) => (
-                    <Fragment>
+                    <Fragment >
                         <ThemeProvider theme={darkTheme}>
                             <AppBar position={"fixed"} >
                                 <Tabs value={location.pathname} textColor={"primary"}>
                                     <Tab label="About Me" value="/" component={Link} to={allTabs[0]} className={"tab"} />
                                     <Tab label="Projects" value="/projects" component={Link} to={allTabs[1]} className={"tab"}/>
-
                                 </Tabs>
                             </AppBar>
                         </ThemeProvider>
@@ -93,7 +89,6 @@ export default function App() {
                   )}
               />
             </Root>
-        </div>
       </Router>
   );
 }

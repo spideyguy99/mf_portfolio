@@ -7,35 +7,48 @@ import {createTheme, styled, ThemeProvider} from "@mui/material/styles";
 import projects from '../data';
 
 const Root = styled('div')(({ theme }) => ({
-    padding: theme.spacing(1),
+//Global
+    ".background":{backgroundColor:'#90caf9', width:"100%", paddingTop:theme.spacing(10), paddingBottom:theme.spacing(5)},
     ".card":{
         margin:theme.spacing(2),
-        width:"45%",
+        width:"40%",
+        padding:3
     },
     ".paper":{
-        padding:theme.spacing(1),
         display:"flex",
         flexWrap:"wrap",
-        justifyContent:"space-between",
+        justifyContent: "space-around",
+        padding: theme.spacing(2),
+    },
+    "#header": {
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        padding:theme.spacing(1),
+        marginBottom:theme.spacing(3)
+    },
+    ".headerTitle":{
+        width:"100%",
+        textAlign:"center"
     },
 //Phones and small tablets
     [theme.breakpoints.down('md')]: {
-        height: 200,
-        margin: theme.spacing(1),
         ".cardimg":{
             height:100
         },
         ".card":{
-            width:"100%"
+            width:"100%",
+            padding:theme.spacing(1)
         },
         ".cardDesc":{
             display: "none"
+        },
+        ".paper":{
+            padding:0
         }
     },
 //Tablets
     [theme.breakpoints.up('md')]: {
-        height: 400,
-        margin: theme.spacing(3),
         ".cardimg":{
             height:400
         },
@@ -49,7 +62,7 @@ const Root = styled('div')(({ theme }) => ({
             height:250
         },
         ".card":{
-            width:"47%"
+            width:"45%"
         }
     },
 }));
@@ -64,12 +77,10 @@ export default function Projects(){
 
     return(
         <Root>
-            <Container>
-                <Paper
-                    elevation={4}
-                    sx={{textAlign:"center", marginTop:6}}
-                >
-                    <h1>Some of the projects I've made</h1>
+            <div className={"background"}>
+                <Container>
+                <Paper elevation={4} className={"paper"} id={"header"}>
+                    <h1 className={"headerTitle"}>Some of the projects I've made</h1>
                     <p style={{paddingBottom:5}}>Most of these are React, but there are also vanilla HTML and CSS projects in here too.</p>
                 </Paper>
                 <Paper elevation={4} className={"paper"}>
@@ -95,7 +106,8 @@ export default function Projects(){
                         </ThemeProvider>
                     ))}
                 </Paper>
-            </Container>
+                </Container>
+            </div>
         </Root>
     )
 }
