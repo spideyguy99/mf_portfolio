@@ -51,7 +51,8 @@ const Root = styled('div')(({ theme }) => ({
     ".header": {
         display: "flex",
         justifyContent: "center",
-        marginBottom:theme.spacing(3)
+        marginBottom:theme.spacing(3),
+        alignItems:"center"
     },
 //Phones and small tablets
     [theme.breakpoints.down('md')]: {
@@ -73,7 +74,7 @@ const Root = styled('div')(({ theme }) => ({
         },
         ".holder":{
             padding: theme.spacing(2),
-            marginTop:25
+            marginTop:25,
         },
         ".paperinpaper":{
             padding:theme.spacing(1),
@@ -90,11 +91,21 @@ const Root = styled('div')(({ theme }) => ({
         "#activity":{
            display:"block"
         },
-        ".avatar":{
-            display:"none"
+        ".avatarMobile":{
+            height: "auto",
+            width:"50%",
+            margin:theme.spacing(1),
+            marginLeft:"100%",
+            marginRight:"100%",
         },
         ".headerDiv":{
-            paddingBottom:theme.spacing(1)
+            paddingBottom:theme.spacing(1),
+            display:"flex",
+            justifyContent:"center",
+            flexWrap:"wrap"
+        },
+        ".avatar":{
+            display:"none"
         }
         },
 //Tablets
@@ -147,6 +158,10 @@ const Root = styled('div')(({ theme }) => ({
             width:100,
             height:100,
             margin:theme.spacing(1),
+            marginRight:theme.spacing(10)
+        },
+        ".avatarMobile":{
+            display:"none"
         }
     },
 //Desktops
@@ -197,6 +212,9 @@ const Root = styled('div')(({ theme }) => ({
             width:150,
             height:"auto",
             margin:theme.spacing(3),
+        },
+        ".avatarMobile":{
+            display:"none"
         }
     },
 }));
@@ -209,6 +227,7 @@ export default function Home(){
                 <Paper elevation={4} className={"header"}>
                     <Avatar className={"avatar"} src={Profile} alt={"Profile picture of Noah Furniss"}/>
                     <div className={"headerDiv"}>
+                        <Avatar className={"avatarMobile"} src={Profile} alt={"Profile picture of Noah Furniss"}/>
                         <h1>Hey, I'm Noah :)</h1>
                         <p  style={{paddingBottom:5}}>I make fun websites and work on computers!</p>
                     </div>
