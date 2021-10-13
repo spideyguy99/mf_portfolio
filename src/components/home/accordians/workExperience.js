@@ -68,7 +68,7 @@ export default function WorkAccord(){
                 <AccordionDetails>
                     <p>October 2020 - Present</p>
                     <ul>
-                        <li>Consult clients on various computer, phone, and miscellaneous technology issuesThen troubleshoot multiple solutions for the given technical issue.</li>
+                        <li>Consult clients on various computer, phone, and miscellaneous technology issues. Then troubleshoot multiple solutions for the given technical issue.</li>
                         <li>Perform repairs on Apple products and complete tickets using GSX/AST.</li>
                     </ul>
                 </AccordionDetails>
