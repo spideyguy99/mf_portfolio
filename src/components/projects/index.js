@@ -82,6 +82,7 @@ export default function Projects(){
                 <Paper elevation={4} className={"paper"} id={"header"}>
                     <h1 className={"headerTitle"}>Some of the projects I've made</h1>
                     <p style={{paddingBottom:5}}>Most of these are React, but there are also vanilla HTML and CSS projects in here too.</p>
+                    <p>IMPORTANT NOTE: These projects are not accessibility focused, and may not function properly on smaller devices.</p>
                 </Paper>
                 <Paper elevation={4} className={"paper"}>
                     {projects.map(item => (

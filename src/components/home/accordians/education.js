@@ -24,6 +24,7 @@ export default function EduAccord(){
                         <h4>Purdue School of Engineering and Technology </h4>
                         <p>Bachelor of Science Computer and Information Technology</p>
                         <p>Concentration: Web/Application Development</p>
+                        <p>Attended: August 2018 - present</p>
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -41,6 +42,7 @@ export default function EduAccord(){
                     <Typography>
                         <h4>Indiana University School of Sciences</h4>
                         <p>School of Science New Media</p>
+                        <p>Attended: August 2017 - May 2018</p>
                     </Typography>
                 </AccordionDetails>
             </Accordion>
@@ -56,6 +58,7 @@ export default function EduAccord(){
                 </AccordionSummary>
                 <AccordionDetails>
                     <p>Core 40</p>
+                    <p>Attended: August 2013 - May 2017</p>
                 </AccordionDetails>
             </Accordion>
         </div>
