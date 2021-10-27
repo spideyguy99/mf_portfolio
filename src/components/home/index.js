@@ -327,6 +327,7 @@ export default function Home(){
                         <ul>
                             <li>Consult clients on various computer, phone, and miscellaneous technology issues. Then troubleshoot multiple solutions for the given technical issue.</li>
                             <li>Perform repairs on Apple products and complete tickets using GSX/AST.</li>
+                            <li>Repair clients devices. This could range anywhere from installing updates, to correcting firmware issues.</li>
                         </ul>
                     </div>
                 </Paper>
@@ -445,7 +446,7 @@ export default function Home(){
                     </Paper>
                     <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
                         <img src={Longboard} className={"activityImg"} alt={"My longboard"}/>
-                        <h4 className={"activityHeader"}>Longboarding</h4>
+                        <h4 className={"activityHeader"}>Hiking</h4>
                         <p>One of the only things that actually keeps me active</p>
                     </Paper>
                     <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
