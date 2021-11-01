@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Container, Avatar, Paper} from "@mui/material";
+import {Container, Paper} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
 
