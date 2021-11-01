@@ -8,16 +8,11 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
-import Paintball from '../media/paintball.JPG';
-import Quadline from '../media/quadLine.JPG';
-import Ultteam from '../media/ultTeam.JPG';
-import Longboard from '../media/longboard.jpg';
 import Profile from '../media/profile.jpeg';
 
-import EduAccord from "./accordians/education";
-import WorkAccord from "./accordians/workExperience";
-import SkillsAccord from "./accordians/skills";
-import ActivAccord from "./accordians/activities";
+import EduAccord from "../accordians/education";
+import WorkAccord from "../accordians/workExperience";
+import SkillsAccord from "../accordians/skills";
 
 const Root = styled('div')(({ theme }) => ({
 //Global
@@ -39,14 +34,7 @@ const Root = styled('div')(({ theme }) => ({
     display:"block"
     },
     ".icons":{
-      color:"black"
-    },
-    "#activityHolder":{
-        marginBottom:theme.spacing(5)
-    },
-    ".activityImg":{
-        borderRadius:4 ,
-        width:"100%",
+      color:"#121212"
     },
     ".header": {
         display: "flex",
@@ -61,9 +49,6 @@ const Root = styled('div')(({ theme }) => ({
         },
         ".accordion":{
             display:"inline"
-        },
-        ".activityImg":{
-            width:"100%"
         },
         ".icons":{
             height: 50,
@@ -87,9 +72,6 @@ const Root = styled('div')(({ theme }) => ({
         "#skill":{
             width:"auto",
             display:"block"
-        },
-        "#activity":{
-           display:"block"
         },
         ".avatarMobile":{
             height: "auto",
@@ -135,19 +117,6 @@ const Root = styled('div')(({ theme }) => ({
         "#skill":{
             width:"40%",
             display:"block"
-        },
-        "#activity":{
-            display:"flex",
-            flexWrap:"wrap",
-            width:"40%"
-        },
-        ".activityHeader":{
-            width:"100%"
-        },
-        "#activityHolder":{
-            display:"flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around"
         },
         "#skillholder":{
             display:"flex",
@@ -197,16 +166,6 @@ const Root = styled('div')(({ theme }) => ({
             display:"flex",
             flexWrap: "wrap",
             justifyContent: "space-around"
-        },
-        "#activityHolder":{
-            display:"flex",
-            flexWrap: "wrap",
-            justifyContent: "space-around"
-        },
-        "#activity":{
-            display:"block",
-            textAlign:"center",
-            width:"45%"
         },
         ".avatar":{
             width:150,
@@ -431,38 +390,6 @@ export default function Home(){
 
                     <div className={"accordion"}>{/*ONLY DISPLAYS ON TABLETS AND PHONES*/}
                         <SkillsAccord/>
-                    </div>
-                </Paper>
-
-
-                <Paper className={"holder"} elevation={4} id={"activityHolder"}>
-                    <h2 style={{width:"100%"}}>Activities</h2>
-
-                    <div className={"sectionHolder"} id={"activityHolder"}>
-                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                        <img src={Ultteam} className={"activityImg"} alt={"IUPUI's ultimate frisbee team."}/>
-                        <h4 className={"activityHeader"}>Ultimate Frisbee</h4>
-                        <p>Club Vice President</p>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                        <img src={Longboard} className={"activityImg"} alt={"My longboard"}/>
-                        <h4 className={"activityHeader"}>Hiking</h4>
-                        <p>One of the only things that actually keeps me active</p>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                        <img src={Quadline} className={"activityImg"} alt={"Me and my senior year quad line."}/>
-                        <h4 className={"activityHeader"}>Marching Band</h4>
-                        <p>Percussion: Bass Line & Quads</p>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                        <img src={Paintball} className={"activityImg"} alt={"My friends and I playing paintball."}/>
-                        <h4 className={"activityHeader"}>Paintball</h4>
-                        <p>Just a fun hobby I enjoy... maybe a little too much</p>
-                    </Paper>
-                    </div>
-
-                    <div className={"accordion"}>
-                        <ActivAccord/>
                     </div>
                 </Paper>
                 </Container>

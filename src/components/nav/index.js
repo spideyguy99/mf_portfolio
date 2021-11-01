@@ -43,9 +43,12 @@ const Root = styled('div')(({ theme }) => ({
     },
     ".listItem":{
         display:'inline',
-        marginRight:25
+        marginRight:25,
     },
     ".menu":{
+        color:"white"
+    },
+    ".button":{
         color:"white"
     },
 //Phones and small tablets
@@ -93,13 +96,19 @@ export default function Navigation(){
                 <nav className={"topNav"}>
                     <ul className={"list"}>
                         <li className={"listItem"}>
-                            <Link className={"link"} to={"/"}>Resume</Link>
+                            <Link className={"link"} to={"/"}>
+                                <Button className={"button"}>Resume</Button>
+                            </Link>
                         </li>
                         <li className={"listItem"}>
-                            <Link className={"link"} to={"/projects"}>Projects</Link>
+                            <Link className={"link"} to={"/projects"}>
+                                <Button className={"button"}>Projects</Button>
+                            </Link>
                         </li>
                         <li className={"listItem"}>
-                            <Link className={"link"} to={"/about"}>About</Link>
+                            <Link className={"link"} to={"/about"}>
+                                <Button className={"button"}>About Me</Button>
+                            </Link>
                         </li>
                     </ul>
                     <MenuIcon
@@ -123,7 +132,7 @@ export default function Navigation(){
                         <MenuItem onClick={handleClose}>
                             <Link className={"link"} to={"/projects"}>Projects</Link>
                         </MenuItem>
-                        <MenuItem onClick={handleClose}>About Me</MenuItem>
+                        <MenuItem onClick={handleClose}><Link className={"link"} to={'/about'}>About Me</Link></MenuItem>
                     </Menu>
                 </nav>
 

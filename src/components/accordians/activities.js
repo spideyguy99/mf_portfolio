@@ -5,10 +5,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Ultteam from "../../media/ultTeam.JPG";
-import Longboard from "../../media/longboard.jpg";
-import Quadline from "../../media/quadLine.JPG";
-import Paintball from "../../media/paintball.JPG";
+
+import Ultteam from "../media/ultTeam.JPG";
+import Quadline from "../media/quadLine.JPG";
+import Paintball from "../media/paintball.JPG";
+import Hiking from '../media/hiking.jpg';
 
 export default function ActivAccord(){
     return(
@@ -38,12 +39,12 @@ export default function ActivAccord(){
                     id="panel2a-header"
                 >
                     <Typography>
-                        <h4 className={"activityHeader"}>Longboarding</h4>
+                        <h4 className={"activityHeader"}>Hiking</h4>
                     </Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <Typography>
-                        <img src={Longboard} className={"activityImg"} alt={"My longboard"}/>
+                        <img src={Hiking} className={"activityImg"} alt={"Hiking Devil's tower"}/>
                         <p>One of the only things that actually keeps me active</p>
                     </Typography>
                 </AccordionDetails>
