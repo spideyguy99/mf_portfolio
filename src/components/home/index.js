@@ -10,9 +10,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 import Profile from '../media/profile.jpeg';
 
-import EduAccord from "../accordians/education";
-import WorkAccord from "../accordians/workExperience";
-import SkillsAccord from "../accordians/skills";
+import EduAccord from "./accordians/education";
+import WorkAccord from "./accordians/workExperience";
+import SkillsAccord from "./accordians/skills";
+
+import EduSection from './sections/education';
+import WorkSection from './sections/workExperience';
+import SkillsSection from "./sections/skills";
 
 const Root = styled('div')(({ theme }) => ({
 //Global
@@ -93,7 +97,7 @@ const Root = styled('div')(({ theme }) => ({
 //Tablets
     [theme.breakpoints.up('md')]: {
         ".sectionHolder":{
-            display:"none"
+            display:'none'
         },
         ".accordion":{
             display:"inline"
@@ -213,30 +217,7 @@ export default function Home(){
                     <h2>Education</h2>
 
                     <div className={"sectionHolder"}>{/*ONLY DISPLAYS ON DESKTOP*/}
-                    <Paper className={"paperinpaper"} id={"edu"} elevation={6}>
-                        <div style={{width: "100%"}}>
-                            <h3 className={"headername"}>Indiana University Purdue University Indianapolis - IUPUI</h3>
-                            <h4>Purdue School of Engineering and Technology </h4>
-                            <p>Bachelor of Science Computer and Information Technology</p>
-                            <p>Concentration: Web/Application Development</p>
-                            <p>Attended: August 2018 - present</p>
-                        </div>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"edu"} elevation={6}>
-                        <div style={{width: "100%"}}>
-                            <h3 className={"headername"}>Indiana University Kokomo</h3>
-                            <h4>Indiana University School of Sciences</h4>
-                            <p>School of Science New Media</p>
-                            <p>Attended: August 2017 - May 2018</p>
-                        </div>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"edu"} elevation={6}>
-                        <div style={{width: "100%"}}>
-                            <h3 className={"headername"}>Fishers High School</h3>
-                            <p>Core 40</p>
-                            <p>Attended: August 2013 - May 2017</p>
-                        </div>
-                    </Paper>
+                        <EduSection/>
                     </div>
 
                     <div className={"accordion"}>{/*ONLY DISPLAYS ON TABLETS AND PHONES*/}
@@ -249,60 +230,7 @@ export default function Home(){
                     <h2>Work Experience</h2>
 
                     <div className={"sectionHolder"}>{/*ONLY DISPLAYS ON DESKTOP*/}
-                    <Paper className={"paperinpaper"} elevation={6}>
-                        <div className={"divinpaper"}>
-                            <h4 className={"headername"}>IUPUI: School of Engineering and Technology</h4>
-                            <h4 style={{fontStyle:"italic"}}>Assistant to the Webmaster</h4>
-                            <p>January 2020 - December 2020</p>
-                        </div>
-                        <div className={"divinpaper"} id={"divdesc"}>
-                            <ul>
-                                <li>Developed Engineering and Technology Website using Trello (Kanban) </li>
-                                <li>Built website using Cascade CMS</li>
-                            </ul>
-                        </div>
-                    </Paper>
-                    <Paper className={"paperinpaper"} elevation={6}>
-                        <div className={"divinpaper"}>
-                            <h4 className={"headername"}>IUPUI: Multidisciplinary Undergraduate Research Institute</h4>
-                            <h4 style={{fontStyle:"italic"}}>Researcher / Developer</h4>
-                            <p>May 2019 - August 2019</p>
-                        </div>
-                        <div className={"divinpaper"} id={"divdesc"}>
-                            <ul>
-                                <li>Researched and Developed a mobile application with React Native</li>
-                                <li>Present total research findings at CRL Summer Symposium at IUPUI</li>
-                                <li>Developed application using a broken version of Agile in a small group setting</li>
-                            </ul>
-                        </div>
-                    </Paper>
-                    <Paper className={"paperinpaper"} elevation={6}>
-                    <div className={"divinpaper"}>
-                        <h4 className={"headername"}>Best Buy - Geek Squad</h4>
-                        <h4 style={{fontStyle:"italic"}}>Advanced Repair Agent</h4>
-                        <p>October 2020 - Present</p>
-                    </div>
-                    <div className={"divinpaper"} id={"divdesc"}>
-                        <ul>
-                            <li>Consult clients on various computer, phone, and miscellaneous technology issues. Then troubleshoot multiple solutions for the given technical issue.</li>
-                            <li>Perform repairs on Apple products and complete tickets using GSX/AST.</li>
-                            <li>Repair clients devices. This could range anywhere from installing updates, to correcting firmware issues.</li>
-                        </ul>
-                    </div>
-                </Paper>
-                    <Paper className={"paperinpaper"} elevation={6}>
-                        <div className={"divinpaper"}>
-                            <h4 className={"headername"}>IUPUI: University Information Technology Services</h4>
-                            <h4 style={{fontStyle:"italic"}}>Consultant Supervisor</h4>
-                            <p>August 2018 - October 2020</p>
-                        </div>
-                        <div className={"divinpaper"} id={"divdesc"}>
-                            <ul>
-                                <li>Trained and oversaw constultants</li>
-                                <li>Assisted with both First and Second Tier IT Support for IUPUI Students</li>
-                            </ul>
-                        </div>
-                    </Paper>
+                        <WorkSection/>
                     </div>
 
                     <div className={"accordion"}>{/*ONLY DISPLAYS ON TABLETS AND PHONES*/}
@@ -314,78 +242,8 @@ export default function Home(){
                 <Paper className={"holder"}  elevation={4}>
                     <h2 style={{width:"100%"}}>Skills</h2>
 
-                    <div className={"sectionHolder"} id={"skillholder"}>{/*ONLY DISPLAYS ON DESKTOP*/}
-                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
-                        <h4 className={"skillheader"}>Programming Languages</h4>
-                        <ul>
-                            <li>JavaScript</li>
-                            <ul>
-                                <li>Vue</li>
-                                <li>JQuery</li>
-                            </ul>
-                            <li>React JS</li>
-                            <ul>
-                                <li>Material UI</li>
-                                <li>Bootstrap</li>
-                                <li>Redux</li>
-                                <li>Firebase</li>
-                            </ul>
-                            <li>React Native</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <ul>
-                                <li>SASS</li>
-                                <li>Less</li>
-                            </ul>
-                            <li>Java</li>
-                            <li>C++</li>
-                            <li>Visual Basic</li>
-                        </ul>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
-                        <h4>Software</h4>
-                        <ul>
-                            <li>Microsoft Office Suite</li>
-                            <ul>
-                                <li>Word</li>
-                                <li>Powerpoint</li>
-                                <li>Excel</li>
-                            </ul>
-                            <li>Adobe Suite</li>
-                            <ul>
-                                <li>Illustrator</li>
-                                <li>Photoshop</li>
-                                <li>Premiere</li>
-                            </ul>
-                            <li>GitHub</li>
-                            <li>Git</li>
-                            <li>Google Cloud Platform</li>
-                            <li>Google Firebase</li>
-                            <li>Netlify</li>
-                            <li>Node</li>
-                        </ul>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
-                        <h4>Operating Systems</h4>
-                        <ul>
-                            <li>Microsoft Windows</li>
-                            <li>Apple MacOS and iOS</li>
-                            <li>Linux</li>
-                            <ul>
-                                <li>Ubuntu</li>
-                                <li>Kali</li>
-                            </ul>
-                        </ul>
-                    </Paper>
-                    <Paper className={"paperinpaper"} id={"skill"} elevation={6}>
-                        <h4>IDE's</h4>
-                        <ul>
-                            <li>WebStorm</li>
-                            <li>Codepen</li>
-                            <li>Brackets</li>
-                            <li>Visual Studio Code</li>
-                        </ul>
-                    </Paper>
+                    <div className={"sectionHolder"}>
+                        <SkillsSection/>
                     </div>
 
                     <div className={"accordion"}>{/*ONLY DISPLAYS ON TABLETS AND PHONES*/}

@@ -6,10 +6,10 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-import Ultteam from "../media/ultTeam.JPG";
-import Quadline from "../media/quadLine.JPG";
-import Paintball from "../media/paintball.JPG";
-import Hiking from '../media/hiking.jpg';
+import Ultteam from "../../media/ultTeam.JPG";
+import Quadline from "../../media/quadLine.JPG";
+import Paintball from "../../media/paintball.JPG";
+import Hiking from '../../media/hiking.jpg';
 
 export default function ActivAccord(){
     return(

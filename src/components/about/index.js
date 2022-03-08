@@ -3,13 +3,8 @@ import React from 'react';
 import {Container, Paper} from "@mui/material";
 import {styled} from "@mui/material/styles";
 
-
-import Paintball from '../media/paintball.JPG';
-import Quadline from '../media/quadLine.JPG';
-import Ultteam from '../media/ultTeam.JPG';
-import Hiking from '../media/hiking.jpg';
-
-import ActivAccord from "../accordians/activities";
+import ActivAccord from "./accordians/activities";
+import ActivitySection from "./sections/activities";
 
 
 const Root = styled('div')(({ theme }) => ({
@@ -136,27 +131,8 @@ export default function AboutMe(){
                     <Paper className={"holder"} elevation={4} id={"activityHolder"}>
                         <h2 style={{width:"100%"}}>Activities</h2>
 
-                        <div className={"sectionHolder"} id={"activityHolder"}>
-                        <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                            <img src={Ultteam} className={"activityImg"} alt={"IUPUI's ultimate frisbee team."}/>
-                            <h4 className={"activityHeader"}>Ultimate Frisbee</h4>
-                            <p>Club Vice President</p>
-                        </Paper>
-                        <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                            <img src={Hiking} className={"activityImg"} alt={"Hiking Devil's tower"}/>
-                            <h4 className={"activityHeader"}>Hiking</h4>
-                            <p>One of the only things that actually keeps me active</p>
-                        </Paper>
-                        <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                            <img src={Quadline} className={"activityImg"} alt={"Me and my senior year quad line."}/>
-                            <h4 className={"activityHeader"}>Marching Band</h4>
-                            <p>Percussion: Bass Line & Quads</p>
-                        </Paper>
-                        <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                            <img src={Paintball} className={"activityImg"} alt={"My friends and I playing paintball."}/>
-                            <h4 className={"activityHeader"}>Paintball</h4>
-                            <p>Just a fun hobby I enjoy... maybe a little too much</p>
-                        </Paper>
+                        <div className={"sectionHolder"}>
+                            <ActivitySection/>
                         </div>
 
                         <div className={"accordion"}>
