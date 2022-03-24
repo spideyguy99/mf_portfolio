@@ -1,22 +1,29 @@
 import React from 'react';
 import {Paper} from "@mui/material";
+
 import Ultteam from "../../media/ultTeam.JPG";
 import Hiking from "../../media/hiking.jpg";
 import Quadline from "../../media/quadLine.JPG";
 import Paintball from "../../media/paintball.JPG";
+import Mypc from '../../media/myPC.jpg';
 
 export default function ActivitySection(){
     return(
         <div id={"activityHolder"}>
             <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
-                <img src={Ultteam} className={"activityImg"} alt={"IUPUI's ultimate frisbee team."}/>
-                <h4 className={"activityHeader"}>Ultimate Frisbee</h4>
-                <p>Club Vice President</p>
+                <img src={Mypc} className={"activityImg"} alt={"My latest computer build"}/>
+                <h4 className={"activityHeader"}>PC Enthusiast</h4>
+                <p>Pretty much where all my money goes these day. This is my latest build as of 2021.</p>
             </Paper>
             <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
                 <img src={Hiking} className={"activityImg"} alt={"Hiking Devil's tower"}/>
                 <h4 className={"activityHeader"}>Hiking</h4>
                 <p>One of the only things that actually keeps me active</p>
+            </Paper>
+            <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
+                <img src={Ultteam} className={"activityImg"} alt={"IUPUI's ultimate frisbee team."}/>
+                <h4 className={"activityHeader"}>Ultimate Frisbee</h4>
+                <p>Club Vice President</p>
             </Paper>
             <Paper className={"paperinpaper"} id={"activity"} elevation={6}>
                 <img src={Quadline} className={"activityImg"} alt={"Me and my senior year quad line."}/>

@@ -5,6 +5,7 @@ import {styled} from "@mui/material/styles";
 
 import ActivAccord from "./accordians/activities";
 import ActivitySection from "./sections/activities";
+import UnderConstruction from '../media/underconstuction.gif';
 
 
 const Root = styled('div')(({ theme }) => ({
@@ -81,7 +82,7 @@ const Root = styled('div')(({ theme }) => ({
         ".paperinpaper":{
             padding:theme.spacing(1),
             margin:theme.spacing(2),
-            display: "flex"
+            display: "flex",
         },
         ".holder":{
             padding: theme.spacing(2),
@@ -119,13 +120,15 @@ const Root = styled('div')(({ theme }) => ({
 }));
 
 export default function AboutMe(){
+
     return(
         <Root>
             <div className={"background"}>
                 <Container>
-                    <Paper className={"header"}>
-                        <h1 className={"headerTitle"}>About Me</h1>
-                        
+                    <Paper className={"header"} style={{display:"flex"}}>
+                        <h1 className={"headerTitle"}>About Me </h1>
+                        <br/>
+                        <img src={UnderConstruction}/>
                     </Paper>
                         
                     <Paper className={"holder"} elevation={4} id={"activityHolder"}>
