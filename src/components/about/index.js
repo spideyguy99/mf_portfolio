@@ -128,7 +128,7 @@ export default function AboutMe(){
                     <Paper className={"header"} style={{display:"flex"}}>
                         <h1 className={"headerTitle"}>About Me </h1>
                         <br/>
-                        <img src={UnderConstruction}/>
+                        <img src={UnderConstruction} alt={"This page is under construction and is not currently finished"}/>
                     </Paper>
                         
                     <Paper className={"holder"} elevation={4} id={"activityHolder"}>
